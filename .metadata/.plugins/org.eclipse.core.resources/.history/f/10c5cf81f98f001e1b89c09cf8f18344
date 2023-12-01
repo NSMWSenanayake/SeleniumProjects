@@ -1,0 +1,126 @@
+/**
+ * 
+ */
+package com.mystore.testcases;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.mystore.base.BaseClass;
+import com.mystore.dataprovider.DataProviders;
+import com.mystore.pageobjects.HomePage;
+import com.mystore.pageobjects.IndexPage;
+import com.mystore.pageobjects.LoginPage;
+import com.mystore.utility.ExcelApiTest;
+import com.mystore.utility.ExcelReader1;
+import com.mystore.utility.NewExcelLibrary;
+import com.mystore.utility.excelReader;
+
+/**
+ * 
+ */
+public class LoginPageTest extends BaseClass{
+	
+	IndexPage indexPage;
+	LoginPage loginPage;
+	HomePage homePage;
+	
+	@BeforeMethod
+	public void setup() {
+		launchApp();
+	}
+	
+//	@AfterMethod
+//	public void tearDown() {
+//		driver.quit();
+//	}
+	
+	
+//	@Test(dataProvider="credentials", dataProviderClass = DataProviders.class)
+//	public void loginTest(String uname, String pswd) {
+//		
+//		indexPage=new IndexPage();
+//		loginPage=indexPage.clickOnSignIn();
+//		homePage=loginPage.login(uname,pswd);
+//
+//		
+//		
+//		
+//	}
+	
+	
+	
+	ExcelApiTest excelapitest;
+	
+	
+	@Test
+	public void loginTest() throws Exception {
+		
+		excelapitest =new ExcelApiTest("/UseExcel_MyStoreProject/src/test/resources/TestData/TestData.xlsx");
+		String USER_NAME = excelapitest.getCellData("creadentials",1,0);
+	    String PASSWORD = excelapitest.getCellData("creadentials",1,1);
+		
+		
+//		excelReader excel = new excelReader();
+//		excel.setExcelFile("/UseExcel_MyStoreProject/src/test/resources/TestData/TestData.xlsx","credentials");	
+//		
+		
+		
+		
+//		String USER_NAME = excel.getCellData("Username",1);
+//	    String PASSWORD = excel.getCellData("Password",1);
+			
+			indexPage=new IndexPage();
+			loginPage=indexPage.clickOnSignIn();
+		//	homePage=loginPage.login(USER_NAME,PASSWORD);
+	
+		}
+	
+	
+	
+//	@Test
+//	public void loginTest() {
+//		
+//		ExcelReader1 excel = new ExcelReader1();
+//		excel.setExcelFile("/src/test/resources/TestData/TestData.xlsx","credentials");	
+//		
+//		//System.out.println(excel.getCellData("Username",1));
+//		
+//		
+//		String USER_NAME = excel.getCellData(2,0);
+//	    String PASSWORD = excel.getCellData(3,1);
+//			
+//			indexPage=new IndexPage();
+//			loginPage=indexPage.clickOnSignIn();
+//			homePage=loginPage.login(USER_NAME,PASSWORD);
+//	
+//		}
+	
+	
+	
+	
+	
+	
+	
+
+	
+//@Test	
+//public void loginTest() {
+//	
+//	ExcelReader1 excelReader = new ExcelReader1();
+//    String sheetName1 = "AdminPortal";
+//	
+//	String USER_NAME = ExcelReader1.getCellData(sheetName1,1,2);
+//    String PASSWORD = ExcelReader1.getCellData(sheetName1,1,3);
+//		
+//		indexPage=new IndexPage();
+//		loginPage=indexPage.clickOnSignIn();
+//		homePage=loginPage.login(USER_NAME,PASSWORD);
+//
+//	}
+	
+	
+
+}

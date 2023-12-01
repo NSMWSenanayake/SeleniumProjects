@@ -1,0 +1,6 @@
+2023-11-29 18:26:07 INFO  Log:17 - =====================================loginTest TEST START=========================================
+2023-11-29 18:26:07 INFO  Log:28 - user is going to click on SignIn
+2023-11-29 18:26:09 INFO  Log:28 - Enter Username and Password
+2023-11-29 18:26:11 INFO  Log:28 - Verifying if user is able to login
+2023-11-29 18:26:11 INFO  Log:28 - Login is Sucess
+2023-11-29 18:26:11 INFO  Log:21 - =====================================loginTest TEST END=========================================

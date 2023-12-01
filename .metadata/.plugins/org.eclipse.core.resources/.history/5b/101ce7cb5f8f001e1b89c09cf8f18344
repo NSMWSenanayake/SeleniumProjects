@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package com.mystore.utility;
+
+import java.awt.Color;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
+
+
+/**
+ * 
+ */
+public class excelReader {
+	
+	
+	private FileInputStream fis;
+	private FileOutputStream fileOut;
+    private Workbook wb;
+    private Sheet sh;
+    private Row row;
+    private Cell cell;
+    private CellStyle cellstyle;
+    private Color mycolor;
+    private String excelFilePath;
+    private Map<String, Integer> columns = new HashMap<>();
+    
+
+}
