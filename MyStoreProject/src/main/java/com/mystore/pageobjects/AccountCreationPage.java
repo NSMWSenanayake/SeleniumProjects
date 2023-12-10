@@ -22,6 +22,35 @@ public class AccountCreationPage extends BaseClass {
 	@FindBy(xpath="//*[@id=\"noSlide\"]/h1")
 	WebElement formTitle;
 	
+	@FindBy(id = "uniform-id_gender1")
+	private WebElement mr;
+	
+	@FindBy(id = "id_gender2")
+	private WebElement mrs;
+
+	@FindBy(name = "customer_firstname")
+	private WebElement firstName;
+
+	@FindBy(name = "customer_lastname")
+	private WebElement lastName;
+
+	@FindBy(name = "passwd")
+	private WebElement passWord;
+
+	@FindBy(name = "days")
+	private WebElement days;
+
+	@FindBy(name = "months")
+	private WebElement months;
+
+	@FindBy(name = "years")
+	private WebElement years;
+	
+	@FindBy(xpath = "//*[@id=\"submitAccount\"]/span")
+	private WebElement registerBtn;
+	
+	
+	
 
 	//Initialize all web objects. use constructor for this.
 	//when we create a object in other class to call a method in this class, all page objects will be initialized using this constructor.
@@ -35,5 +64,34 @@ public class AccountCreationPage extends BaseClass {
 		return Action.isDisplayed(driver, formTitle);   //new keyword is used to create object. It will return the LoginPage object.
 		
 	}
+	
+	public void createAccount(String gender, String fname, String lname,
+			String pswd,
+			String day,
+			String month,
+			String year) {
+		
+		if(gender.equalsIgnoreCase("Mr")) {
+			Action.click(driver, mr);
+		}
+		else {
+			Action.click(driver, mrs);
+		}
+		Action.type(firstName, fname);
+		Action.type(lastName, lname);
+		Action.type(passWord, lname);
+		Action.selectByValue(days, day);
+		Action.selectByValue(months, month);
+		Action.selectByValue(years, year);
+		
+	}
+	
+	public HomePage validateRegistration() {
+		registerBtn.click();
+		return new HomePage();
+	}
+
+	
+	
 
 }

@@ -17,7 +17,8 @@ public class HomePage extends BaseClass {
 	
 	//PAGE OBJECTS ARE WRITTEN USING PAGE FACTORY METHOD.
 			//All web elements are written in the form of page objects.
-			
+	        @FindBy(xpath="//*[@id=\"center_column\"]/p[1]")
+	        WebElement validateAccountCreatedMessage;
 			
 			@FindBy(xpath="//*[@id=\"center_column\"]/div/div/ul/li[1]/a/span")
 			WebElement myWishList;

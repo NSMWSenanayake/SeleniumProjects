@@ -18,8 +18,8 @@ public class SearchResultPage extends BaseClass {
 	//PAGE OBJECTS ARE WRITTEN USING PAGE FACTORY METHOD.
 		//All web elements are written in the form of page objects.
 		
-		
-		@FindBy(xpath="//*[@id=\"noSlide\"]/h1")
+	
+		@FindBy(xpath="//*[@id=\"center_column\"]/ul/li/div/div[1]/div/a[1]/img")
 		WebElement productResult;
 		
 

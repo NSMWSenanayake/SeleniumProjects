@@ -58,12 +58,15 @@ public class AddToCartPage extends BaseClass {
 				
 			}
 			public boolean validateAddToCart () {
+				Action.fluentWait(driver, addToCartMessage, 10);
 				return Action.isDisplayed(driver,addToCartMessage);
-				
 			}
 			
+			
 			public OrderPage clickOnCheckOut () throws Exception {
+				Action.fluentWait(driver, proceedToCheckOutBtn, 10);
 				Action.JSClick(driver,proceedToCheckOutBtn);
+				
 				return new OrderPage();
 			}
 

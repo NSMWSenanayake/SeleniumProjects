@@ -216,7 +216,7 @@ public class Action extends BaseClass {
 		 */
 
 		
-		public boolean selectByValue(WebElement element,String value) {
+		public static boolean selectByValue(WebElement element,String value) {
 			boolean flag = false;
 			try {
 				Select s = new Select(element);
@@ -739,7 +739,7 @@ public class Action extends BaseClass {
 		}
 		
 		
-		public void fluentWait(WebDriver driver,WebElement element, int timeOut) {
+		public static void fluentWait(WebDriver driver,WebElement element, int timeOut) {
 		    Wait<WebDriver> wait = null;
 		    try {
 		        wait = new FluentWait<WebDriver>((WebDriver) driver)

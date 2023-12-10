@@ -19,7 +19,7 @@ public class OrderPage extends BaseClass{
 		//All web elements are written in the form of page objects.
 		
 		
-		@FindBy(xpath="//*[@id=\"product_price_1_1_0\"]/li")
+		@FindBy(xpath="//*[@id=\"product_price_1_3_0\"]/li")
 		WebElement unitPrice;
 		
 		@FindBy(xpath="//*[@id=\"total_price\"]")
@@ -39,7 +39,8 @@ public class OrderPage extends BaseClass{
 			PageFactory.initElements(driver,this);  //this keyword initialize all the page objects.
 		}
 		
-		public double getUnitPrice() {		
+		public double getUnitPrice() {
+			
 			String unitPrice1=unitPrice.getText();
 			String unit=unitPrice1.replaceAll("[^a-zA-Z0-9]", "");
 			double finalUnitPrice=Double.parseDouble(unit);
@@ -48,7 +49,8 @@ public class OrderPage extends BaseClass{
 			
 		}
 		
-		public double getTotalPrice() {		
+		public double getTotalPrice() {	
+			
 			String totalPrice1=totalPrice.getText();
 			String tot=totalPrice1.replaceAll("[^a-zA-Z0-9]", "");
 			double finalTotalPrice=Double.parseDouble(tot);
